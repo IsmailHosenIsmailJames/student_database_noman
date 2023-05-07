@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "822364880589",
+    "project_id": "tpistudentdata",
+    "storage_bucket": "tpistudentdata.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:822364880589:android:145591830aaff99a79b384",
+        "android_client_info": {
+          "package_name": "com.example.student_database"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "822364880589-79o13r2n1bao7hfkd6flsii6a5us0mbs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0dJgBqoLvthQQAT8Hsd6LmLcvMZ-AXTE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "822364880589-79o13r2n1bao7hfkd6flsii6a5us0mbs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
