@@ -18,6 +18,7 @@ class Profile extends StatefulWidget {
 
 class _ProfileState extends State<Profile> {
   Widget imageProfile = const CircularProgressIndicator();
+  Widget profileData = const CircularProgressIndicator();
   bool oneTimeCall = true;
   void getProfileLink() async {
     try {
@@ -114,13 +115,45 @@ class _ProfileState extends State<Profile> {
       }
       String profile = json['url'];
       setState(() {
-        imageProfile = ClipRRect(
-          child: SizedBox(
-            height: 450,
-            width: 450,
-            child: Image.network(profile),
+        imageProfile = SizedBox(
+          height: 350,
+          width: 350,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(1000),
+            child: Image.network(
+              profile,
+              fit: BoxFit.cover,
+            ),
           ),
         );
+      });
+      final jsonData = await FirebaseFirestore.instance
+          .collection("user")
+          .doc(FirebaseAuth.instance.currentUser!.email)
+          .get();
+      String name = jsonData["name"];
+      String roll = jsonData["roll"];
+      String reg = jsonData["reg"];
+      setState(() {
+        profileData = Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              name,
+              style: const TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+            ),
+            Text(
+              "Roll : $roll",
+              style: const TextStyle(fontSize: 25),
+            ),
+            Text(
+              "Registation : $reg",
+              style: const TextStyle(fontSize: 25),
+            ),
+          ],
+        );
+        oneTimeCall = false;
       });
     } catch (e) {
       imageProfile = const Icon(Icons.broken_image);
@@ -138,7 +171,17 @@ class _ProfileState extends State<Profile> {
         title: const Text('Profile'),
       ),
       body: Center(
-        child: imageProfile,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            imageProfile,
+            const SizedBox(
+              height: 20,
+            ),
+            profileData,
+          ],
+        ),
       ),
     );
   }

@@ -14,6 +14,8 @@ class StudentHome extends StatefulWidget {
 
 class _StudentHomeState extends State<StudentHome> {
   Widget initialWidget = const CircularProgressIndicator();
+  Widget profilePhoto =
+      const SizedBox(height: 40, width: 40, child: CircularProgressIndicator());
   bool oneTimeCall = true;
   void getData() async {
     try {
@@ -45,8 +47,26 @@ class _StudentHomeState extends State<StudentHome> {
         );
         oneTimeCall = false;
       });
+      final ref = FirebaseFirestore.instance
+          .collection("profile")
+          .doc(FirebaseAuth.instance.currentUser!.email);
+      final json = await ref.get();
+      setState(() {
+        if (json.exists) {
+          profilePhoto = Image.network(
+            json['url'],
+            fit: BoxFit.cover,
+          );
+        } else {
+          profilePhoto = const Icon(
+            Icons.person,
+            size: 70,
+          );
+        }
+      });
     } catch (e) {
       setState(() {
+        profilePhoto = const Icon(Icons.broken_image);
         initialWidget = const Text("No Data");
       });
     }
@@ -136,7 +156,24 @@ class _StudentHomeState extends State<StudentHome> {
         ),
       ),
       body: Center(
-        child: initialWidget,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(
+              height: 350,
+              width: 350,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(1000),
+                child: profilePhoto,
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            initialWidget,
+          ],
+        ),
       ),
     );
   }

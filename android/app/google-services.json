@@ -29,6 +29,85 @@
             {
               "client_id": "822364880589-79o13r2n1bao7hfkd6flsii6a5us0mbs.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "822364880589-4paop4oc0j149k0bc7rtr1lj994mjrve.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tpistudentdatabase"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:822364880589:android:fdca85dd250e1b7079b384",
+        "android_client_info": {
+          "package_name": "com.example.tpi_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "822364880589-79o13r2n1bao7hfkd6flsii6a5us0mbs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0dJgBqoLvthQQAT8Hsd6LmLcvMZ-AXTE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "822364880589-79o13r2n1bao7hfkd6flsii6a5us0mbs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "822364880589-4paop4oc0j149k0bc7rtr1lj994mjrve.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tpistudentdatabase"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:822364880589:android:7621b58b188fcc7b79b384",
+        "android_client_info": {
+          "package_name": "com.example.tpistudentdatabase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "822364880589-79o13r2n1bao7hfkd6flsii6a5us0mbs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0dJgBqoLvthQQAT8Hsd6LmLcvMZ-AXTE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "822364880589-79o13r2n1bao7hfkd6flsii6a5us0mbs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "822364880589-4paop4oc0j149k0bc7rtr1lj994mjrve.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tpistudentdatabase"
+              }
             }
           ]
         }
